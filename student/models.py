@@ -8,7 +8,7 @@ class UserAccount(models.Model):
     id = AutoField('primary key', primary_key=True)
     name = models.CharField('Name', max_length=500, blank=True)
     age = models.IntegerField('Age', null=True, blank=True)
-    class = models.CharField('Class', max_length=500, blank=True)
+    student_class = models.CharField('Class', max_length=500, blank=True)
 
     objects = MongoDBManager()
 
