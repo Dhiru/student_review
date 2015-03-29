@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html ng-app="mainApp">
+  <head>
+    <meta charset="utf-8">
+    <title>project</title>
+    <link href="{% static 'student/css/base.css' %}" rel="stylesheet" />
+    <script src="{% static 'angular/js/angular.min.js' %}"></script>
+    <script src="{% static 'student/js/main.js' %}"></script>
+    {% block script %}{% endblock %}
+  </head>
+  <body>
+    <header>
+      <div class="header">
+	<div class="left"><a href="#"><span>Menu</span></a></div>
+	<div class="right"><a href="#"><span>User</span></a></div>
+	<div class="clear-both"></div>
+      </div>
+    </header>
+    <div class="main">
+    {% block content %} {% endblock %}
+    </div>
+    <footer class="footer">
+	<div class="left">@ 2015</div>
+	<div class="right"></div>
+	<div class="clear-both"></div>
+    </footer>
+  </body>
+</html>

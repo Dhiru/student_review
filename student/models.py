@@ -3,7 +3,7 @@ from django.db.models import AutoField
 from djangotoolbox.fields import ListField, EmbeddedModelField
 from django_mongodb_engine.contrib import MongoDBManager
 
-# Create your models here.
+
 class UserAccount(models.Model):
     id = AutoField('primary key', primary_key=True)
     name = models.CharField('Name', max_length=500, blank=True)
@@ -19,7 +19,7 @@ class UserAccount(models.Model):
 class Attendence(models.Model):
     id = AutoField('primary key', primary_key=True)
     user = models.ForeignKey('UserAccount', verbose_name="user object")
-    date = models.DateTimeField('activity date')
+    date = models.DateTimeField('attendence date')
 
     objects = MongoDBManager()
 
@@ -30,7 +30,7 @@ class Attendence(models.Model):
 class Points(models.Model):
     id = AutoField('primary key', primary_key=True)
     user = models.ForeignKey('UserAccount', verbose_name="user object")
-    points = models.IntegerField('Age', null=True, blank=True)
+    points = models.IntegerField('Points', null=True, blank=True)
 
     objects = MongoDBManager()
 
@@ -40,8 +40,8 @@ class Points(models.Model):
 
 class Behaviour(models.Model):
     id = AutoField('primary key', primary_key=True)
-    behaviour_name = models.CharField('Class', max_length=500, blank=True)
-    points = models.IntegerField('Age', null=True, blank=True)
+    behaviour_name = models.CharField('behaviour name', max_length=500, blank=True)
+    points = models.IntegerField('points', null=True, blank=True)
     
     objects = MongoDBManager()
 

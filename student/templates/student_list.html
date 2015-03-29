@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Class</th>
+    <th>Points</th>
+  </tr>
+  <tr ng-repeat="user in {{ user_list }}">
+    <td><span ng-bind="user.name"></span></td>
+    <td><span ng-bind="user.age"></span></td>
+    <td><span ng-bind="user.class"></span></td>
+    <td><span ng-bind="user.points"></span></td>
+  </tr>
+</table>
+{% endblock %}
