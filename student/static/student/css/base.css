@@ -23,29 +23,55 @@
     min-width: 98%;
     padding-left: 10px;
     bottom: 0;
-    position: absolute;
-    color: #888
+    color: #888;
+    position: fixed;
+    padding-bottom: 5px;
 }
 
-table {
+.main {
+    height: 600px;
+    max-height: 600px;
+    overflow: auto;
+}
+
+.add-behaviour, .add-student {
+    margin: 0 auto;
+    padding-top: 50px;
+    width: 500px;
+}
+
+.links {
+    padding-top: 20px;
+}
+
+.links a {
+    padding: 10px;
+}
+
+.student-list table {
     width:70%;
 
 }
-table, th, td {
+
+.student-list table, .student-list th, .student-list td {
     border: 1px solid black;
     border-collapse: collapse;
 }
-th, td {
+
+.student-list th, .student-list td {
     padding: 5px;
     text-align: left;
 }
-table tr:nth-child(even) {
+
+.student-list table tr:nth-child(even) {
     background-color: #eee;
 }
-table tr:nth-child(odd) {
+
+.student-list table tr:nth-child(odd) {
    background-color:#fff;
 }
-table th{
+
+.student-list table th{
     background-color: black;
     color: white;
 }

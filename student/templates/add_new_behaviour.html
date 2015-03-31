@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="add-behaviour">
+<form action="." method="post">
+  {% csrf_token %}
+ <table>
+    <tr>
+      <td>
+        Behaviour Title:
+      </td>
+      <td>
+        <input type='text' name='behaviour_name' />
+      </td>
+    </tr>   
+    <tr>
+      <td>
+        Set Points:
+      </td>
+      <td>
+        <input type='text' name='points' />
+      </td>
+    </tr>      
+   </table>
+   <input type="submit" value="Submit"/> 
+</form>
+</div>
+<br/><br/>
+<div class="student-list">
+  <table>
+    <tr>
+      <th>Behaviour Name</th>
+      <th>Points</th>
+    </tr>
+    {% for behaviour in behaviour_list %}
+    <tr>
+      <td><span>{{ behaviour.behaviour_name }}</span></td>
+      <td><span>{{ behaviour.points }}</span></td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}
+

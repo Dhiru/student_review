@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="add-student">
+<form action="." method="post">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <td>
+        Student Name:
+      </td>
+      <td>
+        <input type='text' name='name' />
+      </td>
+    </tr>      
+    <tr>
+      <td>
+        Student Age:
+      </td>
+      <td>
+        <input type='text' name='age' />
+      </td>
+    </tr>      
+    <tr>
+      <td>
+        Student Class:
+      </td>
+      <td>
+        <input type='text' name='class' />
+      </td>
+    </tr>
+  </table>  
+  <input type="submit" value="Submit"/>            
+</form>
+</div>
+{% endblock %}

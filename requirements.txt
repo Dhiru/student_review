@@ -1,0 +1,4 @@
+django==1.6.8
+git+https://github.com/django-nonrel/django@nonrel-1.6
+git+https://github.com/django-nonrel/djangotoolbox
+git+https://github.com/django-nonrel/mongodb-engine
