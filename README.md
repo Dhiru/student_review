@@ -9,10 +9,10 @@ Installation:
     git clone https://github.com/Dhiru/student_review.git
 
 3. Set up virtual environment
-    (1) cd student_review
-    (2) virtualenv --system-site-packages
-    (3) source bin/activate
-    (4) ./bin/pip install -r requirements.txt 
+    1. cd student_review
+    2. virtualenv --system-site-packages
+    3. source bin/activate
+    4. ./bin/pip install -r requirements.txt 
 
 4. Run the following commands:
     
