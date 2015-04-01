@@ -5,6 +5,7 @@ from django.views.generic.base import View
 from django.http import HttpResponseRedirect
 from student.models import *
 import json
+import datetime
 
 
 class MainView(View):
@@ -72,6 +73,13 @@ class SetStudentPoint(View):
             point.user = user
             point.points = behaviour_point
             point.save()
+
+        attendence = Attendence.objects.filter(user__id=user.id, date=datetime.datetime.today().date())
+        if not attendence:
+            attendence = Attendence()
+            attendence.user = user
+            attendence.date = datetime.datetime.today().date()
+            attendence.save()
         return HttpResponseRedirect('/students/')
 
 
@@ -112,6 +120,4 @@ class AddBehaviour(View):
         behaviours.save()
         return HttpResponseRedirect('/addbehaviour/')
         
-
-    
 

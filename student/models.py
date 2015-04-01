@@ -19,7 +19,7 @@ class UserAccount(models.Model):
 class Attendence(models.Model):
     id = AutoField('primary key', primary_key=True)
     user = models.ForeignKey('UserAccount', verbose_name="user object")
-    date = models.DateTimeField('attendence date')
+    date = models.DateField('attendence date')
 
     objects = MongoDBManager()
 
